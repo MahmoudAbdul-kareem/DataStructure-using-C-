@@ -13,7 +13,9 @@ Stack_t *StackCreate(uint32 max_size, StackStatus_t *ret_status)
 
     if(NULL == ret_status)
     {
-        *ret_status = STACK_NULL_POINTER_PASSED;
+        #ifdef D_STACK_DEBUG
+        printf("STACK_NULL_POINTER_PASSED \n");
+        #endif
         my_stack = NULL;
     }
     else
@@ -53,7 +55,9 @@ Stack_t *StackDestroy(Stack_t *stack_obj, StackStatus_t *ret_status)
 {
     if((NULL == stack_obj) || (NULL == ret_status))
     {
-        *ret_status = STACK_NULL_POINTER_PASSED;
+        #ifdef D_STACK_DEBUG
+        printf("STACK_NULL_POINTER_PASSED \n");
+        #endif
     }
     else
     {
@@ -97,7 +101,9 @@ void *StackPop(Stack_t *stack_obj, StackStatus_t *ret_status)
 
     if((NULL == stack_obj) || (NULL == ret_status))
     {
-        *ret_status = STACK_NULL_POINTER_PASSED;
+        #ifdef D_STACK_DEBUG
+        printf("STACK_NULL_POINTER_PASSED \n");
+        #endif
         item_ptr = NULL;
     }
     else
@@ -126,7 +132,9 @@ void *StackTop(Stack_t *stack_obj, StackStatus_t *ret_status)
 
     if((NULL == stack_obj) || (NULL == ret_status))
     {
-        *ret_status = STACK_NULL_POINTER_PASSED;
+        #ifdef D_STACK_DEBUG
+        printf("STACK_NULL_POINTER_PASSED \n");
+        #endif
         item_ptr = NULL;
     }
     else

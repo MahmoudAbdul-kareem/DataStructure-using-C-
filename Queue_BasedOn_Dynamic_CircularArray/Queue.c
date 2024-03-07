@@ -10,7 +10,9 @@ Queue_t *QueueCreate(uint32 max_size, QueueStatus_t *ret_status)
 
     if(NULL == ret_status)
     {
-        *ret_status = QUEUE_NULL_POINTER_PASSED;
+        #ifdef QUEUE_DEBUG
+        printf("QUEUE_NULL_POINTER_PASSED \n");
+        #endif
         my_queue = NULL;
     }
     else
@@ -119,7 +121,9 @@ void *Dequeue(Queue_t *queue_obj, QueueStatus_t *ret_status)
 
     if((NULL == queue_obj) || (NULL == ret_status))
     {
-        *ret_status = QUEUE_NULL_POINTER_PASSED;
+        #ifdef QUEUE_DEBUG
+        printf("QUEUE_NULL_POINTER_PASSED \n");
+        #endif
         item_ptr = NULL;
     }
     else
@@ -157,7 +161,9 @@ void *QueueFront(Queue_t *queue_obj, QueueStatus_t *ret_status)
 
     if((NULL == queue_obj) || (NULL == ret_status))
     {
-        *ret_status = QUEUE_NULL_POINTER_PASSED;
+        #ifdef QUEUE_DEBUG
+        printf("QUEUE_NULL_POINTER_PASSED \n");
+        #endif
         item_ptr = NULL;
     }
     else
@@ -186,7 +192,9 @@ void *QueurRear(Queue_t *queue_obj, QueueStatus_t *ret_status)
 
     if((NULL == queue_obj) || (NULL == ret_status))
     {
-        *ret_status = QUEUE_NULL_POINTER_PASSED;
+        #ifdef QUEUE_DEBUG
+        printf("QUEUE_NULL_POINTER_PASSED \n");
+        #endif
         item_ptr = NULL;
     }
     else
@@ -215,7 +223,9 @@ uint32 QueueCounter(Queue_t *queue_obj, QueueStatus_t *ret_status)
 
     if((NULL == queue_obj) || (NULL == ret_status))
     {
-        *ret_status = QUEUE_NULL_POINTER_PASSED;
+        #ifdef QUEUE_DEBUG
+        printf("QUEUE_NULL_POINTER_PASSED \n");
+        #endif
         counter = -1; // failed
     }
     else

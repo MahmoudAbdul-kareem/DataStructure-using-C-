@@ -7,6 +7,7 @@
 #include "platform_types.h"
 
 #define ZERO 0
+#define D_STACK_DEBUG
 
 typedef struct DynamicStack
 {
